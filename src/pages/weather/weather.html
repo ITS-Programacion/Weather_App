@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title style="text-align: center">
+    Teperatura
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<!-- soy buena ;) 4e4b8309dc81e3678e25c630666bc551-->
+<ion-content padding>
+
+<!-- https://api.darksky.net/forecast/4e4b8309dc81e3678e25c630666bc551/-31.3,-64.3,555567600?exclude=hourly -->
+</ion-content>
+ 
+<ion-content>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+      
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>      
+  </ion-refresher>
+
+
+<ion-list (ionRefresh)="doRefresh($event)" >
+   <!-- <ion-item *ngFor="let post of posts"> -->   
+<ion-title style="text-align:center"> El clima de tu ciudad :D</ion-title>
+    <ion-item>
+<div style="text-align:center;" *ngIf="datoo"> 
+<p style="font-size:150%" >Ciudad: {{ datoo.name }}</p>
+<div style="font-size:100%" >{{datoo.main.temp}}°C con {{datoo.weather[0].description}}</div>
+<p>Porcentaje de humedad: {{datoo.main.humidity}}%</p>
+<p>maxima: {{datoo.main.temp_max}}°C</p>
+<p>minima: {{datoo.main.temp_min}}°C</p>
+<p>Porcentaje de nubes: {{datoo.clouds.all}}%</p>
+<p>Cantidad de lluvia: {{datoo.rain}}%</p>
+<img src= "http://openweathermap.org/img/w/{{datoo.weather[0].icon}}.png"/> 
+    
+
+<div style="margin-top:5%;text-align:center" *ngIf="datos">
+
+<p>Dentro de 3-5 horas </p>
+<p>Temperatura posible: {{datos.list[0].main.temp}}°C</p>  
+<p>Humedad: {{datos.list[0].main.humidity}}%</p>
+<p>Maxima: {{datos.list[0].main.temp_max}}°C</p>
+<p>Minima:{{datos.list[0].main.temp_min}}°C</p> 
+<p>Porcentaje de nubes:{{datos.list[0].clouds.all}}%</p>
+<p>Velocidad del viento:{{datos.list[0].wind.speed}} </p>
+<p>Como esta afuera?:{{datos.list[0].weather[0].description }}</p>
+<p>Fecha: {{datos.list[0].dt_txt}}</p>
+<img src="http://openweathermap.org/img/w/{{datos.list[0].weather[0].icon}}.png"/>
+</div>
+
+
+
+    </div>       
+    </ion-item>
+  </ion-list>
+    
+    
+    
+</ion-content>
+
+
+
+
+<script>
+    console.log("asdas")
+</script>
