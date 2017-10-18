@@ -21,7 +21,7 @@
       
 <ion-list *ngIf="info" (ionRefresh)="doRefresh($event)"> 
     
-    
+<!--
 <ion-card>
 
   <ion-item>
@@ -318,8 +318,279 @@
 
 </ion-card>   
     
+-->
+    
+<ion-card>
+<img style="width: 400px; height: 200px;"src="{{info.posts[0].thread.main_image ||'https://userscontent2.emaze.com/images/6f2251a6-d42e-4022-8277-6809b07e4db1/4de7b980db285431df278ea4d0208771.png'}}">
+  <ion-card-content>
+    <ion-card-title>
+      {{ info.posts[0].title }}
+      </ion-card-title>
+    
+  <p style="white-space:pre-wrap;overflow:hidden;text-overflow: ellipsis;height:84px;"> {{ info.posts[0].text }} </p>
+
+  <ion-row>
+    <ion-col>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <div><a href="{{info.posts[0].url}}">Leer mas</a></div>&nbsp;&nbsp;<ion-icon name="thumbs-up"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+    </ion-col>
+  </ion-row>      
+      
+  </ion-card-content>
+</ion-card>
 
 
+<ion-card>
+<img style="width: 400px; height: 200px;"src="{{info.posts[1].thread.main_image ||'https://userscontent2.emaze.com/images/6f2251a6-d42e-4022-8277-6809b07e4db1/4de7b980db285431df278ea4d0208771.png'}}">
+  <ion-card-content>
+    <ion-card-title>
+      {{ info.posts[1].title }}
+      </ion-card-title>
+    
+  <p style="white-space:pre-wrap;overflow:hidden;text-overflow: ellipsis;height:84px;"> {{ info.posts[1].text }} </p>
+    
+      
+  <ion-row>
+    <ion-col>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <div><a href="{{info.posts[1].url}}">Leer mas</a></div>&nbsp;&nbsp;<ion-icon name="thumbs-up"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+    </ion-col>
+  </ion-row>      
+      
+  </ion-card-content>
+</ion-card>  
+    
+<ion-card>
+<img style="width: 400px; height: 200px;"src="{{info.posts[2].thread.main_image ||'https://userscontent2.emaze.com/images/6f2251a6-d42e-4022-8277-6809b07e4db1/4de7b980db285431df278ea4d0208771.png'}}">
+  <ion-card-content>
+    <ion-card-title>
+      {{ info.posts[2].title }}
+      </ion-card-title>
+    
+  <p style="white-space:pre-wrap;overflow:hidden;text-overflow: ellipsis;height:84px;"> {{ info.posts[2].text }} </p>
+    
+      
+  <ion-row>
+    <ion-col>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <div><a href="{{info.posts[2].url}}">Leer mas</a></div>&nbsp;&nbsp;<ion-icon name="thumbs-up"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+    </ion-col>
+  </ion-row>      
+      
+  </ion-card-content>
+</ion-card>
+
+<ion-card>
+<img style="width: 400px; height: 200px;"src="{{info.posts[3].thread.main_image ||'https://userscontent2.emaze.com/images/6f2251a6-d42e-4022-8277-6809b07e4db1/4de7b980db285431df278ea4d0208771.png'}}">
+  <ion-card-content>
+    <ion-card-title>
+      {{ info.posts[3].title }}
+      </ion-card-title>
+    
+  <p style="white-space:pre-wrap;overflow:hidden;text-overflow: ellipsis;height:84px;"> {{ info.posts[3].text }} </p>
+
+      
+  <ion-row>
+    <ion-col>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <div><a href="{{info.posts[3].url}}">Leer mas</a></div>&nbsp;&nbsp;<ion-icon name="thumbs-up"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+    </ion-col>
+  </ion-row>      
+      
+  </ion-card-content>
+</ion-card>
+    
+<ion-card>
+<img style="width: 400px; height: 200px;"src="{{info.posts[4].thread.main_image ||'https://userscontent2.emaze.com/images/6f2251a6-d42e-4022-8277-6809b07e4db1/4de7b980db285431df278ea4d0208771.png'}}">
+  <ion-card-content>
+    <ion-card-title>
+      {{ info.posts[4].title }}
+      </ion-card-title>
+    
+  <p style="white-space:pre-wrap;overflow:hidden;text-overflow: ellipsis;height:84px;"> {{ info.posts[4].text }} </p>
+    
+      
+  <ion-row>
+    <ion-col>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <div><a href="{{info.posts[4].url}}">Leer mas</a></div>&nbsp;&nbsp;<ion-icon name="thumbs-up"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+    </ion-col>
+  </ion-row>      
+      
+  </ion-card-content>
+</ion-card>
+    
+<ion-card>
+<img style="width: 400px; height: 200px;"src="{{info.posts[5].thread.main_image ||'https://userscontent2.emaze.com/images/6f2251a6-d42e-4022-8277-6809b07e4db1/4de7b980db285431df278ea4d0208771.png'}}">
+  <ion-card-content>
+    <ion-card-title>
+      {{ info.posts[5].title }}
+      </ion-card-title>
+    
+  <p style="white-space:pre-wrap;overflow:hidden;text-overflow: ellipsis;height:84px;"> {{ info.posts[5].text }} </p>
+    
+      
+  <ion-row>
+    <ion-col>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <div><a href="{{info.posts[5].url}}">Leer mas</a></div>&nbsp;&nbsp;<ion-icon name="thumbs-up"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+    </ion-col>
+  </ion-row>      
+      
+  </ion-card-content>
+</ion-card>
+    
+<ion-card>
+<img style="width: 400px; height: 200px;"src="{{info.posts[6].thread.main_image ||'https://userscontent2.emaze.com/images/6f2251a6-d42e-4022-8277-6809b07e4db1/4de7b980db285431df278ea4d0208771.png'}}">
+  <ion-card-content>
+    <ion-card-title>
+      {{ info.posts[6].title }}
+      </ion-card-title>
+    
+  <p style="white-space:pre-wrap;overflow:hidden;text-overflow: ellipsis;height:84px;"> {{ info.posts[6].text }} </p>
+
+      
+  <ion-row>
+    <ion-col>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <div><a href="{{info.posts[6].url}}">Leer mas</a></div>&nbsp;&nbsp;<ion-icon name="thumbs-up"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+    </ion-col>
+  </ion-row>      
+      
+  </ion-card-content>
+</ion-card>
+
+<ion-card>
+<img style="width: 400px; height: 200px;"src="{{info.posts[7].thread.main_image ||'https://userscontent2.emaze.com/images/6f2251a6-d42e-4022-8277-6809b07e4db1/4de7b980db285431df278ea4d0208771.png'}}">
+  <ion-card-content>
+    <ion-card-title>
+      {{ info.posts[7].title }}
+      </ion-card-title>
+    
+  <p style="white-space:pre-wrap;overflow:hidden;text-overflow: ellipsis;height:84px;"> {{ info.posts[7].text }} </p>
+    
+      
+      
+      
+  <ion-row>
+    <ion-col>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <div><a href="{{info.posts[7].url}}">Leer mas</a></div>&nbsp;&nbsp;<ion-icon name="thumbs-up"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+    </ion-col>
+  </ion-row>      
+      
+      
+  </ion-card-content>
+</ion-card>
+    
+<ion-card>
+<img style="width: 400px; height: 200px;"src="{{info.posts[8].thread.main_image ||'https://userscontent2.emaze.com/images/6f2251a6-d42e-4022-8277-6809b07e4db1/4de7b980db285431df278ea4d0208771.png'}}">
+  <ion-card-content>
+    <ion-card-title>
+      {{ info.posts[8].title }}
+      </ion-card-title>
+    
+  <p style="white-space:pre-wrap;overflow:hidden;text-overflow: ellipsis;height:84px;"> {{ info.posts[8].text }} </p>
+    
+      
+  <ion-row>
+    <ion-col>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <div><a href="{{info.posts[8].url}}">Leer mas</a></div>&nbsp;&nbsp;<ion-icon name="thumbs-up"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+    </ion-col>
+  </ion-row>      
+      
+  </ion-card-content>
+</ion-card>
+    
+<ion-card>
+<img style="width: 400px; height: 200px;"src="{{info.posts[9].thread.main_image ||'https://userscontent2.emaze.com/images/6f2251a6-d42e-4022-8277-6809b07e4db1/4de7b980db285431df278ea4d0208771.png'}}">
+  <ion-card-content>
+    <ion-card-title>
+      {{ info.posts[9].title }}
+      </ion-card-title>
+    
+  <p style="white-space:pre-wrap;overflow:hidden;text-overflow: ellipsis;height:84px;"> {{ info.posts[9].text }} </p>
+    
+      
+  <ion-row>
+    <ion-col>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <div><a href="{{info.posts[9].url}}">Leer mas</a></div>&nbsp;&nbsp;<ion-icon name="thumbs-up"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+    </ion-col>
+  </ion-row>      
+      
+      
+  </ion-card-content>
+</ion-card>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
 </ion-list>     
