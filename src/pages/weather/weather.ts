@@ -18,7 +18,7 @@ export class WeatherPage {
   public datos;
   public lacity;
   public lacityid;
-  public saludador;
+
   
   doRefresh(refresher) {
     console.log('Begin async operation', refresher);
@@ -41,6 +41,8 @@ events.subscribe('ciudad', (item) => {
   });
 this.temp_actual();
 }
+      
+    
 
 async temp_actual(){
 if(this.lacity== null){
@@ -70,8 +72,7 @@ else{
     );
     
 } 
-}
-    
+}  
 
 async temp_horas_dias(){ 
 if(this.lacity=="Cordoba, Mendiolaza, ar"){
@@ -163,6 +164,9 @@ this.http.get('http://api.openweathermap.org/data/2.5/forecast?id='+this.lacityi
     );
 }
 }
+      
+    
+    
     
 llamarTranza(){
 this.WeatherDataProvider.traerFafa()

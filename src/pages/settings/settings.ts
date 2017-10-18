@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Events } from 'ionic-angular';
+import 'rxjs/add/operator/map';
+
 @Component({
   selector: 'page-settings',
   templateUrl: 'settings.html'
@@ -31,5 +33,8 @@ initializeItems() {
       'Misiones, Posadas',
     ];
   }
-
+  
+    
+    
 }
+
