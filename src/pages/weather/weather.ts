@@ -6,6 +6,8 @@ import { Events } from 'ionic-angular';
 import { WeatherDataProvider } from '../../providers/weather-data/weather-data';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { LoadingController } from 'ionic-angular';
+
 
 enableProdMode();
 @Component({
@@ -32,8 +34,9 @@ export class WeatherPage {
   constructor(public navCtrl: NavController, 
               public http: Http,
               public WeatherDataProvider:WeatherDataProvider,
-              public events: Events){
-
+              public events: Events,
+              public loadingCtrl: LoadingController,){
+this.presentLoadingCustom()
 events.subscribe('ciudad', (item) => {
     //console.log(item.replace(' ', ''));
     this.lacity=item+", ar";
@@ -41,7 +44,24 @@ events.subscribe('ciudad', (item) => {
   });
 this.temp_actual();
 }
-      
+
+    
+presentLoadingCustom() {
+  this.temp_actual();
+  const loading = this.loadingCtrl.create({
+    spinner: 'ios',
+    content: 'Buscado datos del Server...',
+    duration: 1000
+  });
+
+  loading.onDidDismiss(() => {
+    console.log('Dismissed loading');
+
+  });
+
+  loading.present();
+}    
+    
     
 
 async temp_actual(){

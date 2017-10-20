@@ -11,7 +11,7 @@
 <!-- https://api.darksky.net/forecast/4e4b8309dc81e3678e25c630666bc551/-31.3,-64.3,555567600?exclude=hourly -->
 </ion-content>
  
-<ion-content>
+<ion-content >
 
   <ion-refresher (ionRefresh)="doRefresh($event)">
       
@@ -25,38 +25,157 @@
 
 
 <ion-list (ionRefresh)="doRefresh($event)" >
-   <!-- <ion-item *ngFor="let post of posts"> -->   
-<ion-title style="text-align:center"> El clima de tu ciudad :D</ion-title>
-    <ion-item>
-<div style="text-align:center;" *ngIf="datoo"> 
-<p style="font-size:150%" >Ciudad: {{ datoo.name }}</p>
-<div style="font-size:100%" >{{datoo.main.temp}}°C con {{datoo.weather[0].description}}</div>
-<p>Porcentaje de humedad: {{datoo.main.humidity}}%</p>
-<p>maxima: {{datoo.main.temp_max}}°C</p>
-<p>minima: {{datoo.main.temp_min}}°C</p>
-<p>Porcentaje de nubes: {{datoo.clouds.all}}%</p>
-<p>Cantidad de lluvia: {{datoo.rain}}%</p>
-<img src= "http://openweathermap.org/img/w/{{datoo.weather[0].icon}}.png"/> 
+
+    
+    
+    
+    
+    
+<ion-card *ngIf="datoo">
+  <ion-card-header style="text-align: center" >
+<p style="font-size:27px;margin-left: ">{{datoo.name}} </p>
+<ion-row style="margin-left: 30%;margin-bottom: -20px;margin-top: -20px">
+
+    <p style="font-size: 30px; margin-top: 20px;">{{datoo.main.temp}}°C </p>
+    <img style="width: 80px; height: 80px; margin-top: 2px" src= "http://openweathermap.org/img/w/{{datoo.weather[0].icon}}.png"/>
+    
+      </ion-row>
+  </ion-card-header>
+  <ion-card-content>
+
+<ion-grid>
+
+<ion-row style="margin-left: -6px"*ngIf="datos">
+
+
+      <p style="font-size:20px;margin-left:29px">Max: {{datos.list[0].main.temp_max}}°C </p>
+      <li style="font-size:20px;margin-left: 33px">Min: {{datos.list[3].main.temp_min}}°C</li>
+      
+      <p style="font-size:20px;margin-left: 20px">Humedad: {{datoo.main.humidity}}%</p>
+      <p style="font-size:20px;margin-left: 28px">Nubes: {{datoo.clouds.all}}%</p>
+    <span>
+      <p style="font-size:22px;margin-left: 24px">Probabilidad de lluvia: {{datoo.rain||'0'}}%</p>
+      </span>
+
+      <span></span>
+        <span></span>
+      <span></span>
+      <span></span>
+</ion-row>
+</ion-grid>
+
+
+  </ion-card-content>
+</ion-card>    
+
+
+    
+    
+    
+    
+    
+    
+    
+   
+<ion-card style="margin-top: 15px" *ngIf="datoo">
+  <ion-card-header style="text-align: center" >
+<p style="font-size:27px;margin-left: ">Dentro de 4 horas:</p>
+<ion-row *ngIf="datos" style="margin-left: 30%;margin-bottom: -20px;margin-top: -20px">
+
+    <p style="font-size: 30px; margin-top: 20px;">{{datos.list[0].main.temp}}°C </p>
+    <img style="width: 80px; height: 80px; margin-top: 2px" src= "http://openweathermap.org/img/w/{{datoo.weather[0].icon}}.png"/>
+    
+      </ion-row>
+  </ion-card-header>
+  <ion-card-content>
+
+<ion-grid>
+
+<ion-row style="margin-left: -6px"  *ngIf="datos">
+
+
+      <p style="font-size:20px;margin-left:29px">Max: {{datos.list[0].main.temp_max}}°C </p>
+      <li style="font-size:20px;margin-left: 33px">Min: {{datos.list[0].main.temp_min}}°C</li>
+      
+      <p style="font-size:20px;margin-left: 20px">Humedad: {{datos.list[0].main.humidity}}%</p>
+      <p style="font-size:20px;margin-left: 28px">Nubes: {{datos.list[0].clouds.all}}%</p>
+    <span>
+      <p style="font-size:22px;margin-left: 24px">Probabilidad de lluvia: {{datoo.rain||'0'}}%</p>
+<p style="font-size:22px;margin-left: 45px">    {{datos.list[0].dt_txt}}</p>
+      </span>
+
+      <span></span>
+        <span></span>
+      <span></span>
+      <span></span>
+</ion-row>
+</ion-grid>
+
+
+  </ion-card-content>
+</ion-card>        
+
+    
     
 
-<div style="margin-top:5%;text-align:center" *ngIf="datos">
+    
+<ion-card style="margin-top: 15px" *ngIf="datoo">
+  <ion-card-header style="text-align: center" >
+<p style="font-size:27px;margin-left: ">Sabado a la noche:</p>
+<ion-row *ngIf="datos" style="margin-left: 30%;margin-bottom: -20px;margin-top: -20px">
 
-<p>Dentro de 3-5 horas </p>
-<p>Temperatura posible: {{datos.list[0].main.temp}}°C</p>  
-<p>Humedad: {{datos.list[0].main.humidity}}%</p>
-<p>Maxima: {{datos.list[0].main.temp_max}}°C</p>
-<p>Minima:{{datos.list[0].main.temp_min}}°C</p> 
-<p>Porcentaje de nubes:{{datos.list[0].clouds.all}}%</p>
-<p>Velocidad del viento:{{datos.list[0].wind.speed}} </p>
-<p>Como esta afuera?:{{datos.list[0].weather[0].description }}</p>
-<p>Fecha: {{datos.list[0].dt_txt}}</p>
-<img src="http://openweathermap.org/img/w/{{datos.list[0].weather[0].icon}}.png"/>
-</div>
+    <p style="font-size: 30px; margin-top: 20px;">{{datos.list[17].main.temp}}°C </p>
+    <img style="width: 80px; height: 80px; margin-top: 2px" src= "http://openweathermap.org/img/w/{{datos.list[17].weather[0].icon||''}}.png"/>
+    
+      </ion-row>
+  </ion-card-header>
+  <ion-card-content>
+
+<ion-grid>
+
+<ion-row style="margin-left: -6px"  *ngIf="datos">
 
 
+      <p style="font-size:20px;margin-left:29px">Max: {{datos.list[17].main.temp_max}}°C </p>
+      <li style="font-size:20px;margin-left: 33px">Min: {{datos.list[17].main.temp_min}}°C</li>
+      
+      <p style="font-size:20px;margin-left: 20px">Humedad: {{datos.list[17].main.humidity}}%</p>
+      <p style="font-size:20px;margin-left: 28px">Nubes: {{datos.list[17].clouds.all}}%</p>
+    <span >
+        <div style="margin-left: 95px;margin-top: 25px">
+        <p>2 {{datos.list[2].dt_txt}}</p>
+        <p>3 {{datos.list[3].dt_txt}}</p>
+        <p>4 {{datos.list[4].dt_txt}}</p>
+        <p>5 {{datos.list[5].dt_txt}}</p>
+        <p>6 {{datos.list[6].dt_txt}}</p>
+        <p>7 {{datos.list[7].dt_txt}}</p>
+        <p>8 {{datos.list[8].dt_txt}}</p>
+        <p>9 {{datos.list[9].dt_txt}}</p>
+        <p>10 {{datos.list[10].dt_txt}}</p>
+        <p>11 {{datos.list[11].dt_txt}}</p>
+        <p>12 {{datos.list[12].dt_txt}}</p>
+        <p>13 {{datos.list[13].dt_txt}}</p>
+        <p>14 {{datos.list[14].dt_txt}}</p>
+        <p>15 {{datos.list[15].dt_txt}}</p>
+        <p>16 {{datos.list[16].dt_txt}}</p>
+        <p>17 {{datos.list[17].dt_txt}}</p>
+        <p>18 {{datos.list[18].dt_txt}}</p>
+        <p>19 {{datos.list[19].dt_txt}}</p>
+        <p>20 {{datos.list[20].dt_txt}}</p>
+        </div>
+      </span>
 
-    </div>       
-    </ion-item>
+      <span></span>
+        <span></span>
+      <span></span>
+      <span></span>
+</ion-row>
+</ion-grid>
+
+
+  </ion-card-content>
+</ion-card>     
+
   </ion-list>
     
     
