@@ -31,7 +31,7 @@ this.presentLoadingCustom();
     
     
 presentLoadingCustom() {
-this.get_news();
+  this.get_news();
   const loading = this.loadingCtrl.create({
     spinner: 'ios',
     content: 'Buscado datos del Server...',
@@ -66,5 +66,7 @@ this.http.get('http://webhose.io/filterWebContent?token=09733bad-5500-4ce3-8e6d-
     
     
 }      
+ 
+    
     
 }

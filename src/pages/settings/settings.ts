@@ -21,15 +21,22 @@ this.item;
 onChange(item){
     this.ciudad=this.item;
     this.events.publish('ciudad', item);
+    this.switchTabs();
+
 } 
+    
+    
+switchTabs() {
+  this.navCtrl.parent.select(1);
+}    
     
 initializeItems() {
     this.items = [
-      'Villa Allende',
       'Cordoba',
-      'Buenos Aires, La Plata',
-      'Cordoba, La Calera',
-      'Cordoba, Mendiolaza',
+      'Villa Allende, Cordoba',
+      'Mendoza',
+      'La Plata, Buenos Aires',
+      'Rosario',
       'Misiones, Posadas',
     ];
   }

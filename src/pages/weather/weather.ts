@@ -28,7 +28,7 @@ export class WeatherPage {
     setTimeout(() => {
       console.log('Async operation has ended');
       refresher.complete();
-    }, 1000);
+    }, 1500);
   }
 
   constructor(public navCtrl: NavController, 
@@ -37,12 +37,16 @@ export class WeatherPage {
               public events: Events,
               public loadingCtrl: LoadingController,){
 this.presentLoadingCustom()
+      
+
 events.subscribe('ciudad', (item) => {
     //console.log(item.replace(' ', ''));
     this.lacity=item+", ar";
     console.log("evento capto: "+this.lacity)
+    this.temp_actual();
   });
-this.temp_actual();
+
+
 }
 
     
@@ -80,7 +84,7 @@ this.http.get('http://api.openweathermap.org/data/2.5/weather?q=Cordoba,arg&appi
 }
 else{
   this.temp_horas_dias();
-  this.http.get('http://api.openweathermap.org/data/2.5/weather?q='+this.lacity+',arg&appid=aa02e2e3e20b08dda6c7f1156b0fe6e0&units=metric&lang=es')
+  this.http.get('http://api.openweathermap.org/data/2.5/weather?q='+this.lacity+'&appid=aa02e2e3e20b08dda6c7f1156b0fe6e0&units=metric&lang=es')
     .map(res => res.json())
     .subscribe(
       data => {
@@ -95,19 +99,7 @@ else{
 }  
 
 async temp_horas_dias(){ 
-if(this.lacity=="Cordoba, Mendiolaza, ar"){
-//this.lacityid="3844424"
-this.http.get('http://api.openweathermap.org/data/2.5/forecast?id='+3844424+'&APPID=aa02e2e3e20b08dda6c7f1156b0fe6e0&units=metric&lang=es')
-    .map(res => res.json())
-    .subscribe(
-      data => {
-        this.datos = data;
-      },err => {
-          console.log("Mamaaa cortastes toda la loz!");
-      }
-    );
-}
-else if (this.lacity=="Villa Allende, ar") { 
+if(this.lacity=="Villa Allende, Cordoba, ar"){
 this.lacityid="3832815"
 this.http.get('http://api.openweathermap.org/data/2.5/forecast?id='+this.lacityid+'&APPID=aa02e2e3e20b08dda6c7f1156b0fe6e0&units=metric&lang=es')
     .map(res => res.json())
@@ -118,7 +110,6 @@ this.http.get('http://api.openweathermap.org/data/2.5/forecast?id='+this.lacityi
           console.log("Mamaaa cortastes toda la loz!");
       }
     );
-    
 }
 else if(this.lacity=="Cordoba, ar"){
 this.lacityid="3860259";
@@ -134,8 +125,8 @@ this.http.get('http://api.openweathermap.org/data/2.5/forecast?id='+this.lacityi
     
     
 }
-else if(this.lacity=="Cordoba,La Calera, ar"){
-this.lacityid="3852374"
+else if(this.lacity=="Mendoza, ar"){
+this.lacityid="3844421"
 this.http.get('http://api.openweathermap.org/data/2.5/forecast?id='+this.lacityid+'&APPID=aa02e2e3e20b08dda6c7f1156b0fe6e0&units=metric&lang=es')
     .map(res => res.json())
     .subscribe(
@@ -146,7 +137,7 @@ this.http.get('http://api.openweathermap.org/data/2.5/forecast?id='+this.lacityi
       }
     );
 }
-else if(this.lacity=="Buenos Aires, La Plata, ar"){
+else if(this.lacity=="La Plata, Buenos Aires, ar"){
 this.lacityid="3432043"
 this.http.get('http://api.openweathermap.org/data/2.5/forecast?id='+this.lacityid+'&APPID=aa02e2e3e20b08dda6c7f1156b0fe6e0&units=metric&lang=es')
     .map(res => res.json())
@@ -169,7 +160,19 @@ this.http.get('http://api.openweathermap.org/data/2.5/forecast?id='+this.lacityi
           console.log("Mamaaa cortastes toda la loz!");
       }
     );
-}    
+}
+else if(this.lacity=="Rosario, ar"){
+this.lacityid="3838583"
+this.http.get('http://api.openweathermap.org/data/2.5/forecast?id='+this.lacityid+'&APPID=aa02e2e3e20b08dda6c7f1156b0fe6e0&units=metric&lang=es')
+    .map(res => res.json())
+    .subscribe(
+      data => {
+        this.datos = data;
+      },err => {
+          console.log("Mamaaa cortastes toda la loz!");
+      }
+    );
+} 
 else{
 console.log("Ciudad no encontrada por defecto: "+this.lacity ) 
 this.lacityid="3860259";
