@@ -10,8 +10,22 @@
       <ion-option *ngFor="let item of items" value="{{item}}">{{item}}</ion-option>
     </ion-select>
   </ion-item>
+
+    
+  <ion-item>
+    <ion-label>Informacion</ion-label>
+    <ion-select placeholder="Deportes y Clima"  [(ngModel)]="tag"(ionChange)="onChange2(tag)" interface="action-sheet" >
+      <ion-option *ngFor="let tag of tags" value="{{tag}}">{{tag}}</ion-option>
+    </ion-select>
+  </ion-item>    
+    
+
+    
+    
 </ion-list>  
 
+    
+    
     
     
     
