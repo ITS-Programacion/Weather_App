@@ -1,87 +1,137 @@
 
 <ion-content>
 
-<ion-content class="outer-content">
-    
-<ion-list style="margin-top: 20px">
-  <ion-item>
-    <ion-label>Ciudad</ion-label>
-    <ion-select placeholder="Cordoba"  [(ngModel)]="item"(ionChange)="onChange(item)" interface="action-sheet" >
-      <ion-option *ngFor="let item of items" value="{{item}}">{{item}}</ion-option>
-    </ion-select>
-  </ion-item>
-
-    
-  <ion-item>
-    <ion-label>Informacion</ion-label>
-    <ion-select placeholder="Deportes y Clima"  [(ngModel)]="tag"(ionChange)="onChange2(tag)" interface="action-sheet" >
-      <ion-option *ngFor="let tag of tags" value="{{tag}}">{{tag}}</ion-option>
-    </ion-select>
-  </ion-item>    
-    
-
-    
-    
-</ion-list>  
-
-    
-    
-    
-    
-    
-  <!--  
-  <ion-list>
-    <ion-item>
-      <ion-input placeholder="Title"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input placeholder="Location"></ion-input>
-    </ion-item>
-  </ion-list>
-
-  <ion-list>
-    <ion-item>
-      <ion-label>Start Date</ion-label>
-      <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="event.month"></ion-datetime>
-    </ion-item>
 
 
-    <ion-item>
-      <ion-label>Start Time</ion-label>
-      <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="event.timeStarts"></ion-datetime>
-    </ion-item>
+    <!--
+<ion-item>
+<ion-label>Ciudad</ion-label>
+<ion-select placeholder="Cordoba"  [(ngModel)]="item"(ionChange)="onChange(item)" interface="action-sheet" >
+<ion-option *ngFor="let item of items" value="{{item}}">{{item}}</ion-option>
+</ion-select>
+</ion-item>
 
-    <ion-item>
-      <ion-label>Ends</ion-label>
-      <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="event.timeEnds"></ion-datetime>
-    </ion-item>
 
-    <button ion-item>
-      <ion-label>Repeat</ion-label>
-      <ion-note item-end>Never</ion-note>
-    </button>
+<ion-item>
+<ion-label>Informacion</ion-label>
+<ion-select placeholder="Deportes y Clima"  [(ngModel)]="tag"(ionChange)="onChange2(tag)" interface="action-sheet" >
+<ion-option *ngFor="let tag of tags" value="{{tag}}">{{tag}}</ion-option>
+</ion-select>
+</ion-item>    
+-->
 
-    <button ion-item>
-      <ion-label>Travel Time</ion-label>
-      <ion-note item-end>None</ion-note>
-    </button>
-  </ion-list>
 
-  <ion-list>
-    <button ion-item>
-      <ion-label>Alert</ion-label>
-      <ion-note item-end>None</ion-note>
-    </button>
-  </ion-list>
-    
-    
-    <style>
-  ion-list:first-child {
-    margin-top: 32px;
-  }
-  ion-list + ion-list {
-    margin-top: 0;
-  }
-</style>
-    -->
+
+
+    <ion-card>
+        <ion-card-header style="text-align: center;font-size: 20px">
+            Configuracion:
+        </ion-card-header>
+
+        <ion-list>
+            <ion-item>
+                <ion-label>Ciudad</ion-label>
+                <ion-select placeholder="Cordoba"  [(ngModel)]="item"(ionChange)="onChange(item)" interface="action-sheet" >
+                    <ion-option *ngFor="let item of items" value="{{item}}">{{item}}</ion-option>
+                </ion-select>
+            </ion-item>
+
+
+            <ion-item>
+                <ion-label>Informacion</ion-label>
+                <ion-select placeholder="Deportes y Clima"  [(ngModel)]="tag"(ionChange)="onChange2(tag)" interface="action-sheet" >
+                    <ion-option *ngFor="let tag of tags" value="{{tag}}">{{tag}}</ion-option>
+                </ion-select>
+            </ion-item>   
+
+
+        </ion-list>
+    </ion-card>        
+
+
+    <ion-card-header style="text-align: center;font-size: 20px" >
+        About
+    </ion-card-header>   
+    <ion-card>
+
+
+        <ion-item>
+            <h2 style="text-align:center;font-size:20px">Camilo Sosa Tosello</h2>
+        </ion-item>
+
+
+
+        <ion-img style="width: 350px; height: 350px;"src="../../assets/img/sosa.jpg"   >   </ion-img>
+
+        <!--<img src="../../assets/img/sosa.jpg">-->
+
+
+
+        <ion-card-content>
+            <p style="text-align:center;font-size: 17px;">Un chico comun amante de</p>
+            <button ion-item>
+                <ion-icon name="md-beer" item-left></ion-icon>
+                La Birra
+            </button>
+            <button ion-item>
+                <ion-icon name="ios-wine" item-left></ion-icon> 
+                El Vinito
+            </button>    
+            <button ion-item>
+                <ion-icon name="ios-football-outline" item-left></ion-icon>
+                El futbol
+            </button>
+            <button ion-item>
+                <ion-icon name="md-glasses" item-left></ion-icon>
+                La buena vida
+            </button>
+            <button ion-item>
+                <ion-icon name="code-working" item-left></ion-icon>
+                El codigo
+            </button>
+        </ion-card-content>
+
+    </ion-card>
+
+
+
+    <ion-card>
+        <ion-card-header style="text-align:center">Yo en las Redes</ion-card-header>
+
+        <ion-card-content>
+
+            <button ion-item>
+                <ion-icon name="logo-twitter" item-left></ion-icon>
+                <a href="https://twitter.com/CamiloSosaT">Camilo Sosa Tosello</a>
+            </button>
+
+
+            <button ion-item>
+                <ion-icon name="logo-instagram" item-left></ion-icon>
+                <a href="https://www.instagram.com/CamiloSosaT/">Camilo Sosa Tosello</a>
+            </button>
+
+
+
+
+            <button ion-item>
+                <ion-icon name="logo-github" item-left></ion-icon>
+                <a href="https://github.com/camost/">Camilo Sosa Tosello</a>
+            </button>
+
+
+
+            <button ion-item>
+                <ion-icon name="md-at" item-left></ion-icon>
+                <a href="">camilososa98@gmail.com</a>
+            </button>
+        </ion-card-content>
+
+    </ion-card>
+
+
+
+
+
+
 </ion-content>

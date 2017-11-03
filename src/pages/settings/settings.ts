@@ -5,60 +5,60 @@ import 'rxjs/add/operator/map';
 import { ActionSheetController } from 'ionic-angular'
 
 @Component({
-  selector: 'page-settings',
-  templateUrl: 'settings.html'
+    selector: 'page-settings',
+    templateUrl: 'settings.html'
 })
 export class SettingsPage  {
-items: string[];
-public item;
-public ciudad;
-tags:string[];
-public eltag;
+    items: string[];
+    public item;
+    public ciudad;
+    tags:string[];
+    public eltag;
 
-constructor(public navCtrl: NavController,
-            public events: Events,
-            public actionSheetCtrl:ActionSheetController){
-this.initializeItems();
-this.item;
-}
+    constructor(public navCtrl: NavController,
+                 public events: Events,
+                 public actionSheetCtrl:ActionSheetController){
+        this.initializeItems();
+        this.item;
+    }
 
-onChange(item){
-    this.events.publish('ciudad', item);
-    this.switchTabs();
+    onChange(item){
+        this.events.publish('ciudad', item);
+        this.switchTabs();
 
-} 
-onChange2(tag){
-    this.events.publish('Seleccionado', tag);
-    this.switchTabs2();
-    console.log('eligio'+tag)
-} 
-    
-switchTabs() {
-  this.navCtrl.parent.select(1);
-}
-switchTabs2() {
-  this.navCtrl.parent.select(0);
-}      
-    
-initializeItems() {
-    this.items = [
-      'Cordoba',
-      'Villa Allende, Cordoba',
-      'Mendoza',
-      'La Plata, Buenos Aires',
-      'Rosario',
-      'Misiones, Posadas',
-    ];
-    this.tags =[
-        'Deportes y Clima',
-        'Noticias',
-        'Musica',
-        
-    ]
-  }
+    } 
+    onChange2(tag){
+        this.events.publish('Seleccionado', tag);
+        this.switchTabs2();
+        console.log('eligio'+tag)
+    } 
 
-    
-    
-    
+    switchTabs() {
+        this.navCtrl.parent.select(1);
+    }
+    switchTabs2() {
+        this.navCtrl.parent.select(0);
+    }      
+
+    initializeItems() {
+        this.items = [
+            'Cordoba',
+            'Villa Allende, Cordoba',
+            'Mendoza',
+            'La Plata, Buenos Aires',
+            'Rosario',
+            'Misiones, Posadas',
+        ];
+        this.tags =[
+            'Deportes y Clima',
+            'Noticias',
+            'Musica',
+
+        ]
+    }
+
+
+
+
 }
 
