@@ -63,7 +63,7 @@
 
         <ion-card style="background-color:#FAFAFA" *ngIf="datos">
             <ion-card-header >
-                <p style="font-size:27px;color:#616161;text-align: center">Dentro de 4 Horas:</p>
+                <p style="font-size:24px;color:#616161;text-align: center">{{dia_hora_0}} </p>
                 <ion-row style="margin-left: 30%;margin-bottom: -20px;margin-top: -20px">
 
                     <p style="font-size: 25px; margin-top: 20px;color:#616161;margin-left: 15px">
@@ -107,11 +107,11 @@
 
         <ion-card style="background-color:#FAFAFA" *ngIf="datos">
             <ion-card-header >
-                <p style="font-size:27px;color:#616161;text-align: center">Dentro de 8 Horas:</p>
+                <p style="font-size:24px;color:#616161;text-align: center">{{dia_hora_1}}</p>
                 <ion-row style="margin-left: 30%;margin-bottom: -20px;margin-top: -20px">
 
                     <p style="font-size: 25px; margin-top: 20px;color:#616161;margin-left: 15px">
-                        {{datos.list[1].main.temp}}°C </p>
+                        {{datos.list[8].main.temp}}°C </p>
                     <p>
                         <img style=" margin-top: 9px;margin-left: 2px " src= "http://openweathermap.org/img/w/{{datoo.weather[0].icon}}.png"/>
                     </p>
@@ -127,13 +127,13 @@
 
                         <p style="font-size:20px;margin-left:50px;color:#616161">
                             <ion-icon name="arrow-up"></ion-icon>
-                            {{datos.list[1].main.temp_max}}°C</p>
+                            {{datos.list[6].main.temp_max}}°C</p>
                         <p style="font-size:20px;margin-left: 30px;color:#616161">
-                            <ion-icon name="arrow-down"></ion-icon>&nbsp;{{datos.list[1].main.temp_min}}°C</p>
+                            <ion-icon name="arrow-down"></ion-icon>&nbsp;{{datos.list[3].main.temp_min}}°C</p>
 
-                        <p style="font-size:20px;margin-left: 50px;color:#616161"> <ion-icon name="water"></ion-icon>&nbsp;{{datos.list[1].main.humidity}}%</p>
+                        <p style="font-size:20px;margin-left: 50px;color:#616161"> <ion-icon name="water"></ion-icon>&nbsp;{{datos.list[8].main.humidity}}%</p>
                         <p style="font-size:20px;margin-left: 60px;color:#616161">
-                            <ion-icon name="cloud"></ion-icon>&nbsp;{{datos.list[1].clouds.all}}%</p>
+                            <ion-icon name="cloud"></ion-icon>&nbsp;{{datos.list[8].clouds.all}}%</p>
 
                         <span></span>
                         <span></span>
@@ -147,7 +147,7 @@
         </ion-card>   
 
 
-        <ion-card style="margin-top: 15px" *ngIf="datos">
+<!--        <ion-card style="margin-top: 15px" *ngIf="datos">
             <ion-card-header style="text-align: center" >
                 <p style="font-size:27px;margin-left: ">Sabado a la noche:</p>
                 <ion-row  style="margin-left: 30%;margin-bottom: -20px;margin-top: -20px">
@@ -171,6 +171,10 @@
                         <p style="font-size:20px;margin-left: 28px">Nubes: {{datos.list[17].clouds.all}}%</p>
                         <span >
                             <div style="margin-left: 95px;margin-top: 25px">
+
+
+                                <p>0 {{datos.list[0].dt_txt}}</p>
+                                <p>1 {{datos.list[1].dt_txt}}</p>
                                 <p>2 {{datos.list[2].dt_txt}}</p>
                                 <p>3 {{datos.list[3].dt_txt}}</p>
                                 <p>4 {{datos.list[4].dt_txt}}</p>
@@ -202,7 +206,7 @@
 
 
             </ion-card-content>
-        </ion-card>     
+        </ion-card>-->     
 
     </ion-list>
 
