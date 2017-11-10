@@ -40,7 +40,7 @@ this.presentLoadingCustom()
       
 
 events.subscribe('ciudad', (item) => {
-    //console.log(item.replace(' ', ''));
+    //item.replace('', '');
     this.lacity=item+", ar";
     console.log("evento capto: "+this.lacity)
     this.temp_actual();
@@ -99,7 +99,7 @@ else{
 }  
 
 async temp_horas_dias(){ 
-if(this.lacity=="Villa Allende, Cordoba, ar"){
+if(this.lacity=="Villa Allende, ar"){
 this.lacityid="3832815"
 this.http.get('http://api.openweathermap.org/data/2.5/forecast?id='+this.lacityid+'&APPID=aa02e2e3e20b08dda6c7f1156b0fe6e0&units=metric&lang=es')
     .map(res => res.json())
@@ -137,7 +137,7 @@ this.http.get('http://api.openweathermap.org/data/2.5/forecast?id='+this.lacityi
       }
     );
 }
-else if(this.lacity=="La Plata, Buenos Aires, ar"){
+else if(this.lacity=="La Plata, ar"){
 this.lacityid="3432043"
 this.http.get('http://api.openweathermap.org/data/2.5/forecast?id='+this.lacityid+'&APPID=aa02e2e3e20b08dda6c7f1156b0fe6e0&units=metric&lang=es')
     .map(res => res.json())
@@ -149,7 +149,7 @@ this.http.get('http://api.openweathermap.org/data/2.5/forecast?id='+this.lacityi
       }
     );
 }
-else if(this.lacity=="Misiones, Posadas, ar"){
+else if(this.lacity=="Misiones, ar"){
 this.lacityid="3429886"
 this.http.get('http://api.openweathermap.org/data/2.5/forecast?id='+this.lacityid+'&APPID=aa02e2e3e20b08dda6c7f1156b0fe6e0&units=metric&lang=es')
     .map(res => res.json())

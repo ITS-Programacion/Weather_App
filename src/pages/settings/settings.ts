@@ -43,11 +43,11 @@ export class SettingsPage  {
     initializeItems() {
         this.items = [
             'Cordoba',
-            'Villa Allende, Cordoba',
+            'Villa Allende',
             'Mendoza',
-            'La Plata, Buenos Aires',
+            'La Plata',
             'Rosario',
-            'Misiones, Posadas',
+            'Posadas',
         ];
         this.tags =[
             'Deportes y Clima',
