@@ -26,7 +26,8 @@ export class SettingsPage  {
         this.events.publish('ciudad', item);
         this.switchTabs();
 
-    } 
+    }
+    
     onChange2(tag){
         this.events.publish('Seleccionado', tag);
         this.switchTabs2();
@@ -36,6 +37,7 @@ export class SettingsPage  {
     switchTabs() {
         this.navCtrl.parent.select(1);
     }
+    
     switchTabs2() {
         this.navCtrl.parent.select(0);
     }      

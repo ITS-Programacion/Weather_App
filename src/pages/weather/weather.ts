@@ -16,7 +16,7 @@ enableProdMode();
     providers:[WeatherDataProvider],
 })
 export class WeatherPage {
-    public datoo;public datos;public lacity;public lacityid;public dia_hora_0;public dia_hora_1;
+    public datoo;public datos;public lacity;public lacityid;public dia_hora_0;public dia_hora_1; public dia_2;public dia_3;public dia_4;
 
 
     doRefresh(refresher) {
@@ -34,16 +34,12 @@ export class WeatherPage {
                  public events: Events,
                  public loadingCtrl: LoadingController,){
         this.presentLoadingCustom()
-
-
         events.subscribe('ciudad', (item) => {
             //item.replace('', '');
             this.lacity=item+", ar";
             console.log("evento capto: "+this.lacity)
             this.temp_actual();
         });
-
-
     }
 
 
@@ -63,12 +59,10 @@ export class WeatherPage {
         loading.present();
     }    
 
-
-
     async temp_actual(){
         if(this.lacity== null){
             this.temp_horas_dias();
-            this.http.get('http://api.openweathermap.org/data/2.5/weather?q=Cordoba,arg&appid=aa02e2e3e20b08dda6c7f1156b0fe6e0&units=metric&lang=es')
+            this.http.get('http://api.openweathermap.org/data/2.5/weather?q=Cordoba,ar&appid=aa02e2e3e20b08dda6c7f1156b0fe6e0&units=metric&lang=es')
                 .map(res => res.json())
                 .subscribe(
                 data => {
@@ -89,7 +83,7 @@ export class WeatherPage {
                     this.datoo = data;
                     console.log(this.datoo);
                 },err => {
-                    console.log("Mamaaa cortastes toda la loz!");
+                    console.log("se rompio");
                 }
             );
 
@@ -106,6 +100,9 @@ export class WeatherPage {
                     this.datos = data;
                     this.diador0();
                     this.diador1();
+                    this.diador2();
+                    this.diador3();
+                    this.diador4();
                 },err => {
                     console.log("Mamaaa cortastes toda la loz!");
                 }
@@ -120,6 +117,9 @@ export class WeatherPage {
                     this.datos = data;
                     this.diador0();
                     this.diador1();
+                    this.diador2();
+                    this.diador3();
+                    this.diador4();
                 },err => {
                     console.log("Mamaaa cortastes toda la loz!");
                 }
@@ -136,6 +136,9 @@ export class WeatherPage {
                     this.datos = data;
                     this.diador0();
                     this.diador1();
+                    this.diador2();
+                    this.diador3();
+                    this.diador4();
                 },err => {
                     console.log("Mamaaa cortastes toda la loz!");
                 }
@@ -150,6 +153,9 @@ export class WeatherPage {
                     this.datos = data;
                     this.diador0();
                     this.diador1();
+                    this.diador2();
+                    this.diador3();
+                    this.diador4();
                 },err => {
                     console.log("Mamaaa cortastes toda la loz!");
                 }
@@ -164,6 +170,9 @@ export class WeatherPage {
                     this.datos = data;
                     this.diador0();
                     this.diador1();
+                    this.diador2();
+                    this.diador3();
+                    this.diador4();
                 },err => {
                     console.log("Mamaaa cortastes toda la loz!");
                 }
@@ -178,6 +187,9 @@ export class WeatherPage {
                     this.datos = data;
                     this.diador0();
                     this.diador1();
+                    this.diador2();
+                    this.diador3();
+                    this.diador4();
                 },err => {
                     console.log("Mamaaa cortastes toda la loz!");
                 }
@@ -193,6 +205,9 @@ export class WeatherPage {
                     this.datos = data;
                     this.diador0();
                     this.diador1();
+                    this.diador2();
+                    this.diador3();
+                    this.diador4();
                 },err => {
                     console.log("Mamaaa cortastes toda la loz!");
                 }
@@ -201,11 +216,8 @@ export class WeatherPage {
     }
 
 
-
-
-
     async diador0(){
-        console.log(" Haciendo dia")
+        console.log(" Haciendo dia 0")
         var date = new Date(this.datos.list[0].dt*1000);
         /*        var mes= new Array(12);
         mes[0] = "Enero";
@@ -222,11 +234,11 @@ export class WeatherPage {
         mes[11] = "Diciembre";
         var elmes = mes[date.getDay()];*/
         var weekday = new Array(7);
-        weekday[0] =  "Dom";
-        weekday[1] = "Lun";
-        weekday[2] = "Mar";
-        weekday[3] = "Mie";
-        weekday[4] = "Jue";
+        weekday[0] =  "Domingo";
+        weekday[1] = "Lunes";
+        weekday[2] = "Martes";
+        weekday[3] = "Miercoles";
+        weekday[4] = "Jueves";
         weekday[5] = "Viernes Cheto";
         weekday[6] = "Sabaduki";
         var eldia = weekday[date.getDay()];
@@ -239,7 +251,7 @@ export class WeatherPage {
 
 
     async diador1(){
-        console.log(" Haciendo dia")
+        console.log(" Haciendo dia 1")
         var date = new Date(this.datos.list[8].dt*1000);
         /*        var mes= new Array(12);
         mes[0] = "Enero";
@@ -272,11 +284,55 @@ export class WeatherPage {
     }    
 
 
+    async diador2(){
+        console.log(" Haciendo dia 2")
+        var date = new Date(this.datos.list[12].dt*1000);
+        var weekday = new Array(7);
+        weekday[0] =  "Domingo";
+        weekday[1] = "Lunes";
+        weekday[2] = "Martes";
+        weekday[3] = "Miercoles";
+        weekday[4] = "Jueves";
+        weekday[5] = "Viernes Cheto";
+        weekday[6] = "Sabaduki";
+        var eldia = weekday[date.getDay()];
+        this.dia_2= eldia;
+
+    }    
 
 
+    async diador3(){
+        console.log(" Haciendo dia 2")
+        var date = new Date(this.datos.list[20].dt*1000);
+        var weekday = new Array(7);
+        weekday[0] = "Domingo";
+        weekday[1] = "Lunes";
+        weekday[2] = "Martes";
+        weekday[3] = "Miercoles";
+        weekday[4] = "Jueves";
+        weekday[5] = "Viernesuli";
+        weekday[6] = "Sabaduki";
+        var eldia = weekday[date.getDay()];
+        this.dia_3= eldia;
+
+    }     
 
 
+    async diador4(){
+        console.log(" Haciendo dia 2")
+        var date = new Date(this.datos.list[28].dt*1000);
+        var weekday = new Array(7);
+        weekday[0] = "Domingo";
+        weekday[1] = "Lunes";
+        weekday[2] = "Martes";
+        weekday[3] = "Miercoles";
+        weekday[4] = "Jueves";
+        weekday[5] = "Viernesuli";
+        weekday[6] = "Sabaduki";
+        var eldia = weekday[date.getDay()];
+        this.dia_4= eldia;
 
+    }     
 
 
     llamarTranza(){

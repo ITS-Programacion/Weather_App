@@ -38,27 +38,17 @@
                             <ion-icon name="arrow-up"></ion-icon>
                             {{datoo.main.temp_max}}°C </p>
                         <p style="font-size:20px;margin-left: 55px;color:#616161">
-                            <ion-icon name="arrow-down"></ion-icon>&nbsp;{{datos.list[1].main.temp_min}}°C</p>
+                            <ion-icon name="arrow-down"></ion-icon>&nbsp;{{datoo.main.temp_min}}°C</p>
 
                         <p style="font-size:20px;margin-left: 55px;color:#616161"> <ion-icon name="water"></ion-icon>&nbsp;{{datoo.main.humidity}}%</p>
                         <p style="font-size:20px;margin-left: 58px;color:#616161">
                             <ion-icon name="cloud"></ion-icon>&nbsp;{{datoo.clouds.all}}%</p>
-                        <span>
-
-                        </span>
-
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
                     </ion-row>
                 </ion-grid>
 
 
             </ion-card-content>
         </ion-card>    
-
-
 
 
         <ion-card style="background-color:#FAFAFA" *ngIf="datos">
@@ -90,19 +80,12 @@
                         <p style="font-size:20px;margin-left: 50px;color:#616161"> <ion-icon name="water"></ion-icon>&nbsp;{{datos.list[0].main.humidity}}%</p>
                         <p style="font-size:20px;margin-left: 60px;color:#616161">
                             <ion-icon name="cloud"></ion-icon>&nbsp;{{datos.list[0].clouds.all}}%</p>
-
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
                     </ion-row>
                 </ion-grid>
 
 
             </ion-card-content>
         </ion-card>       
-
-
 
 
         <ion-card style="background-color:#FAFAFA" *ngIf="datos">
@@ -127,18 +110,13 @@
 
                         <p style="font-size:20px;margin-left:50px;color:#616161">
                             <ion-icon name="arrow-up"></ion-icon>
-                            {{datos.list[6].main.temp_max}}°C</p>
+                            {{datos.list[8].main.temp_max}}°C</p>
                         <p style="font-size:20px;margin-left: 30px;color:#616161">
-                            <ion-icon name="arrow-down"></ion-icon>&nbsp;{{datos.list[3].main.temp_min}}°C</p>
+                            <ion-icon name="arrow-down"></ion-icon>&nbsp;{{datos.list[8].main.temp_min}}°C</p>
 
                         <p style="font-size:20px;margin-left: 50px;color:#616161"> <ion-icon name="water"></ion-icon>&nbsp;{{datos.list[8].main.humidity}}%</p>
                         <p style="font-size:20px;margin-left: 60px;color:#616161">
                             <ion-icon name="cloud"></ion-icon>&nbsp;{{datos.list[8].clouds.all}}%</p>
-
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
                     </ion-row>
                 </ion-grid>
 
@@ -146,67 +124,72 @@
             </ion-card-content>
         </ion-card>   
 
+        <ion-grid style="margin-top: -20px">
 
-<!--        <ion-card style="margin-top: 15px" *ngIf="datos">
-            <ion-card-header style="text-align: center" >
-                <p style="font-size:27px;margin-left: ">Sabado a la noche:</p>
-                <ion-row  style="margin-left: 30%;margin-bottom: -20px;margin-top: -20px">
+            <ion-row style="margin-left: -10px">
 
-                    <p style="font-size: 30px; margin-top: 20px;">{{datos.list[17].main.temp}}°C </p>
-                    <img style="width: 80px; height: 80px; margin-top: 2px" src= "http://openweathermap.org/img/w/{{datos.list[17].weather[0].icon||''}}.png"/>
+                <ion-col col-4>
+                    <ion-card style="background-color:#FAFAFA; position: absolute " *ngIf="datos">
+                        <ion-card-header >
+                            <img style="width: 60px;height: 60px;margin-left: 5px;margin-top: -14px " src= "http://openweathermap.org/img/w/{{datos.list[14].weather[0].icon}}.png"/>     <p style="font-size:18px;color:#616161;text-align: center;margin-top:-10px;margin-bottom:5px">{{dia_2}}</p>  
+                            <ion-row style="margin-left:-10px;margin-bottom: -20px;margin-top: -20px">
 
-                </ion-row>
-            </ion-card-header>
-            <ion-card-content>
+                                <p style="margin-top: 10px font-size:15px;margin-left:10px;color:#616161;margin-top: 15px">
+                                    <ion-icon name="arrow-up"></ion-icon>
+                                    {{datos.list[15].main.temp}}°C</p>
+                                <p style="font-size:15px;margin-left: 10px;color:#616161">
+                                    <ion-icon name="arrow-down"></ion-icon>&nbsp;{{datos.list[11].main.temp}}°C</p>
 
-                <ion-grid>
+                                <p style="font-size:15px;margin-left: 8px;color:#616161">
+                                    <ion-icon name="cloud"></ion-icon>&nbsp;{{datos.list[14].clouds.all}}%</p>
+                            </ion-row>
 
-                    <ion-row style="margin-left: -6px"  >
+                        </ion-card-header>
+                    </ion-card>       
+                </ion-col>                
 
+                <ion-col col-4>
+                    <ion-card style="background-color:#FAFAFA; position: absolute " *ngIf="datos">
+                        <ion-card-header >
+                            <img style="width: 60px;height: 60px;margin-left: 5px;margin-top: -14px " src= "http://openweathermap.org/img/w/{{datos.list[22].weather[0].icon}}.png"/>     <p style="font-size:18px;color:#616161;text-align: center;margin-top:-10px;margin-bottom:5px">{{dia_3}}</p>  
+                            <ion-row style="margin-left: -20%;margin-bottom: -20px;margin-top: -20px">
 
-                        <p style="font-size:20px;margin-left:29px">Max: {{datos.list[17].main.temp_max}}°C </p>
-                        <li style="font-size:20px;margin-left: 33px">Min: {{datos.list[17].main.temp_min}}°C</li>
+                                <p style="margin-top: 10px font-size:15px;margin-left:10px;color:#616161;margin-top: 15px">
+                                    <ion-icon name="arrow-up"></ion-icon>
+                                    {{datos.list[23].main.temp_max}}°C</p>
+                                <p style="font-size:15px;margin-left: 10px;color:#616161">
+                                    <ion-icon name="arrow-down"></ion-icon>&nbsp;{{datos.list[19].main.temp_min}}°C</p>
 
-                        <p style="font-size:20px;margin-left: 20px">Humedad: {{datos.list[17].main.humidity}}%</p>
-                        <p style="font-size:20px;margin-left: 28px">Nubes: {{datos.list[17].clouds.all}}%</p>
-                        <span >
-                            <div style="margin-left: 95px;margin-top: 25px">
+                                <p style="font-size:15px;margin-left: 8px;color:#616161">
+                                    <ion-icon name="cloud"></ion-icon>&nbsp;{{datos.list[22].clouds.all}}%</p>
+                            </ion-row>
 
+                        </ion-card-header>
+                    </ion-card>       
+                </ion-col>
 
-                                <p>0 {{datos.list[0].dt_txt}}</p>
-                                <p>1 {{datos.list[1].dt_txt}}</p>
-                                <p>2 {{datos.list[2].dt_txt}}</p>
-                                <p>3 {{datos.list[3].dt_txt}}</p>
-                                <p>4 {{datos.list[4].dt_txt}}</p>
-                                <p>5 {{datos.list[5].dt_txt}}</p>
-                                <p>6 {{datos.list[6].dt_txt}}</p>
-                                <p>7 {{datos.list[7].dt_txt}}</p>
-                                <p>8 {{datos.list[8].dt_txt}}</p>
-                                <p>9 {{datos.list[9].dt_txt}}</p>
-                                <p>10 {{datos.list[10].dt_txt}}</p>
-                                <p>11 {{datos.list[11].dt_txt}}</p>
-                                <p>12 {{datos.list[12].dt_txt}}</p>
-                                <p>13 {{datos.list[13].dt_txt}}</p>
-                                <p>14 {{datos.list[14].dt_txt}}</p>
-                                <p>15 {{datos.list[15].dt_txt}}</p>
-                                <p>16 {{datos.list[16].dt_txt}}</p>
-                                <p>17 {{datos.list[17].dt_txt}}</p>
-                                <p>18 {{datos.list[18].dt_txt}}</p>
-                                <p>19 {{datos.list[19].dt_txt}}</p>
-                                <p>20 {{datos.list[20].dt_txt}}</p>
-                            </div>
-                        </span>
+                <ion-col col-4>
+                    <ion-card style="background-color:#FAFAFA; position: absolute " *ngIf="datos">
+                        <ion-card-header >
+                            <img style="width: 60px;height: 60px;margin-left: 5px;margin-top: -14px " src= "http://openweathermap.org/img/w/{{datos.list[30].weather[0].icon}}.png"/>     <p style="font-size:18px;color:#616161;text-align: center;margin-top:-10px;margin-bottom:5px">{{dia_4}}</p>  
+                            <ion-row style="margin-left: -20%;margin-bottom: -20px;margin-top: -20px">
+                                <p style="margin-top: 10px font-size:15px;margin-left:10px;color:#616161;margin-top: 15px">
+                                    <ion-icon name="arrow-up"></ion-icon>
+                                    {{datos.list[27].main.temp_max}}°C</p>
+                                <p style="font-size:15px;margin-left: 10px;color:#616161">
+                                    <ion-icon name="arrow-down"></ion-icon>&nbsp;{{datos.list[31].main.temp_min}}°C</p>
 
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </ion-row>
-                </ion-grid>
+                                <p style="font-size:15px;margin-left: 8px;color:#616161">
+                                    <ion-icon name="cloud"></ion-icon>&nbsp;{{datos.list[30].clouds.all}}%</p>
+                            </ion-row>
 
+                        </ion-card-header>
+                    </ion-card> 
+                </ion-col>
 
-            </ion-card-content>
-        </ion-card>-->     
+            </ion-row>
+        </ion-grid>
+
 
     </ion-list>
 
